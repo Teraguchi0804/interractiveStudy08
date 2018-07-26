@@ -1,7 +1,7 @@
-
 // 初期設定
 init();
 function init() {
+
   update();
 }
 
@@ -24,9 +24,20 @@ function update() {
     }
     el.css({
       background:'linear-gradient(' + grd + ')'
+
     })
 
   });
+
+	// 色々ランダムに
+	TweenMax.set(tg, {
+		scaleX:range(2),
+		scaleY:range(2),
+		rotationX:radian(range(180)),
+		rotationY:radian(range(180)),
+		rotationZ:radian(range(90)),
+		opacity: random(0.3, 1.0)
+	});
 
   window.requestAnimationFrame(update);
 }

@@ -1,15 +1,59 @@
+// 変数定義
+var cs       = document.getElementById('myCanvas'),
+	ctx      = cs.getContext('2d'),
+	csWidth  = cs.width,
+	csHeight = cs.height,
+	center   = {
+		x: csWidth / 2,
+		y: csHeight / 2
+	};
+
+// 線の基本スタイル
+ctx.strokeStyle = '#666';
+ctx.lineWidth = 10;
+
+var centerY = 0;
+
+// 横線を引く
+var drawHorizontalLine = function() {
+	window.console.log('aaa');
+	ctx.beginPath();
+	ctx.moveTo(0, center.y);
+	window.console.log(centerY);
+	ctx.lineTo(csWidth, center.y);
+	ctx.closePath();
+	ctx.stroke();
+};
+
+// 縦線を引く
+var drawVerticalLine = function() {
+	ctx.beginPath();
+	ctx.moveTo(center.x, 0);
+	ctx.lineTo(center.x, csHeight);
+	ctx.closePath();
+	ctx.stroke();
+};
+
 
 // 初期設定
 init();
 function init() {
+	// drawHorizontalLine();
+	// drawVerticalLine();
+
   update();
+
 }
+
+
 
 // 毎フレーム実行
 window.requestAnimationFrame(update);
 function update() {
+	
+	centerY = range(csWidth);
 
-  var tg = $('.js-tg');
+  // var tg = $('.js-tg');
 
   // 色々ランダムに
   TweenMax.set(tg, {
