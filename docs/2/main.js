@@ -24,7 +24,6 @@ function update() {
     }
     el.css({
       background:'linear-gradient(' + grd + ')'
-
     })
 
   });
